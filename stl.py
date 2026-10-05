@@ -3,17 +3,19 @@ from Chatbot import search
 st.title("College FAQ Chatbot")
 #initializing message directory
 if "messages" not in st.session_state:
-    st.session_state.messages = []
+    st.session_state.messages = [        {
+            "role": "assistant",
+            "content": "Hi there! I'm your trusty college helper chatbot. Ask me any college-related question."
+        }]
 
 #printing chat history
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.write(message["content"])
 
+
 #Getting input
 prompt = st.chat_input("What do you want to know")
-with st.chat_message("assistant"):
-    st.markdown("Hi there! I'm your trusty college helper Chatbot. Ask me any college-related questions.")
 if prompt :
     with st.chat_message("user"):
         st.markdown(prompt)
