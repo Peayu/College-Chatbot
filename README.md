@@ -197,7 +197,7 @@ pip install -r requirements.txt
 ### 4. Run the application
 
 ```bash
-streamlit run Chatbot.py
+streamlit run app.py
 ```
 
 The application will be available at:
